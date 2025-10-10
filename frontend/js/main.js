@@ -25,12 +25,12 @@ function createHero() {
       <button id="searchBtn" class="cta">kamer zoeken</button>
     </div>`;
   app.appendChild(hero);
+  
 
-  // event listener: wanneer gebruiker op knop klikt, laad kamers
   document.getElementById("searchBtn").addEventListener("click", loadRooms);
+  
 }
 
-// Haal kamers op van de backend (GET)
 async function loadRooms() {
   try {
     const res = await fetch(API);
