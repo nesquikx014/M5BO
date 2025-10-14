@@ -1,6 +1,8 @@
 /* frontend/style.css */
 * { box-sizing: border-box; }
 
+
+
 @media (max-width: 600px) {
   /* deze stijl geldt alleen voor schermen smaller dan 600px */
 }
@@ -28,6 +30,13 @@ body { margin:0; font-family: Arial, sans-serif; color:#111; }
 
 footer { display:flex; justify-content:center; gap:40px; padding:15px 0; font-style:italic; font-weight:bold; background:#fff;}
 
+
+html,body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
 .cta.active {
   background: #e67e22;
   transform: scale(0.97);
@@ -61,14 +70,20 @@ body {
 
 /* === HERO === */
 .hero {
-  height: 75vh;
+ height: 100vh;                     /* vh = volledige hoogte van scherm */
+  width: 110vw;                      /* vw = volledige breedte van scherm */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-size: cover;
-  background-position: center;
+
+background-image: url("/fotos/image.png");  
+background-size: cover;            /* vult volledig het scherm */
+  background-position: center;       /* centreert de afbeelding */
+  background-repeat: no-repeat;      /* geen herhaling */
   position: relative;
-  background-image: url("/fotos/image.png");
+  margin: 0;
+  padding: 0;
+  
 }
 
 

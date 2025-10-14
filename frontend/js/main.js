@@ -8,7 +8,7 @@ function createHeader() {
   const header = document.createElement("header");
   header.className = "header";
   header.innerHTML = `
-    <div class="left">Taal</div>
+    <div class="left">Taal</div>  
     <div class="right">
       <a href="#">Aanmelden</a>
       <a href="#">Inloggen</a>
