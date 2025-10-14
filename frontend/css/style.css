@@ -71,7 +71,7 @@ body {
 /* === HERO === */
 .hero {
  height: 100vh;                     /* vh = volledige hoogte van scherm */
-  width: 110vw;                      /* vw = volledige breedte van scherm */
+  width: 100vw;                      /* vw = volledige breedte van scherm */
   display: flex;
   justify-content: center;
   align-items: center;
