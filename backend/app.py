@@ -1,40 +1,27 @@
-# backend/app.py
-from flask import Flask, jsonify, request
-from flask_cors import CORS
+from flask import Flask, send_from_directory
+import os
 
-app = Flask(__name__)
-CORS(app)  # toestaan dat de browser (frontend) fetch verzoeken mag doen
+# Zorg dat Flask weet waar frontend zit
+app = Flask(__name__, static_folder="frontend", static_url_path="")
 
-# Eenvoudige in-memory "database"
-rooms = [
-    {"id": 1, "stad": "Amsterdam", "prijs": 650},
-    {"id": 2, "stad": "Rotterdam",  "prijs": 550},
-    {"id": 3, "stad": "Utrecht",    "prijs": 600}
-]
+# 👉 Homepage (index.html)
+@app.route("/")
+def serve_index():
+    return send_from_directory(app.static_folder, "index.html")
 
-@app.route("/api/rooms", methods=["GET"])
-def get_rooms():
-    # Geeft de lijst kamers terug als JSON
-    return jsonify(rooms)
+# 👉 Kamerpagina (kamer.html)
+@app.route("/kamer.html")
+def serve_kamer():
+    return send_from_directory(app.static_folder, "kamer.html")
 
-@app.route("/api/rooms", methods=["POST"])
-def add_room():
-    # Verwacht JSON body zoals {"stad":"Eindhoven","prijs":500}
-    data = request.get_json()
-    if not data:
-        return jsonify({"error": "Geen JSON ontvangen"}), 400
-
-    stad = data.get("stad")
-    prijs = data.get("prijs")
-    # simpele validatie
-    if not stad or not isinstance(prijs, (int, float)):
-        return jsonify({"error": "Ongeldige velden"}), 400
-
-    new_id = max((r["id"] for r in rooms), default=0) + 1
-    new_room = {"id": new_id, "stad": stad, "prijs": prijs}
-    rooms.append(new_room)
-    return jsonify(new_room), 201
+# 👉 Alle andere bestanden (js, css, images)
+@app.route("/<path:path>")
+def serve_static(path):
+    file_path = os.path.join(app.static_folder, path)
+    if os.path.isfile(file_path):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return "Bestand niet gevonden", 404
 
 if __name__ == "__main__":
-    # Start de server op http://127.0.0.1:5000
     app.run(debug=True)
