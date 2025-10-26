@@ -15,7 +15,6 @@ body { margin:0; font-family: Arial, sans-serif; color:#111; }
 .hero { height:75vh; display:flex; justify-content:center; align-items:center;
        background-image: url('achtergrond.jpg'); /* zet hier je foto */
        background-size:cover; background-position:center; position:relative; }
-/* .hero::after { content:""; position:absolute; inset:0; background: rgba(0,0,0,0.35); } */
 .overlay { position:relative; text-align:center; color:#fff; }
 .title { font-size:5rem; margin:0; text-shadow: 4px 4px 3px rgba(0,0,0,0.6); }
 
@@ -41,7 +40,6 @@ html,body{
   background: #e67e22;
   transform: scale(0.97);
 }
-/* === BASIS === */
 * {
   box-sizing: border-box;
 }
@@ -53,7 +51,6 @@ body {
   background-color: #fff;
 }
 
-/* === HEADER === */
 .header {
   display: flex;
   justify-content: space-between;
@@ -68,31 +65,24 @@ body {
   color: #000;
 }
 
-/* === HERO === */
 .hero {
- height: 100vh;                     /* vh = volledige hoogte van scherm */
-  width: 100vw;                      /* vw = volledige breedte van scherm */
+ height: 100vh;                     
+  width: 100vw;                      
   display: flex;
   justify-content: center;
   align-items: center;
 
 background-image: url("/fotos/image.png");  
-background-size: cover;            /* vult volledig het scherm */
-  background-position: center;       /* centreert de afbeelding */
-  background-repeat: no-repeat;      /* geen herhaling */
+background-size: cover;            
+  background-position: center;       
+  background-repeat: no-repeat;      
   position: relative;
   margin: 0;
   padding: 0;
   
 }
 
-/* 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-} */
+
 
 .overlay {
   position: relative;
@@ -119,7 +109,6 @@ background-size: cover;            /* vult volledig het scherm */
   font-weight: bold;
 }
 
-/* === KAMERLIJST === */
 .rooms {
   background: rgba(255, 255, 255, 0.95);
   padding: 20px;

@@ -8,11 +8,11 @@ function createKamerPage() {
   container.innerHTML = `
     <h1>Beschikbare kamers</h1>
     <p>Welkom op de kamerpagina van RoomUs!</p>
-    <button id="backBtn">⬅️ Terug naar home</button>
+    <button id="backBtn">⬅ Terug naar home</button>
   `;
   app.appendChild(container);
 
-  // Terugknop stuurt terug naar index.html
+ 
   document.getElementById("backBtn").addEventListener("click", () => {
     window.location.href = "index.html";
   });

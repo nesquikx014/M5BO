@@ -23,7 +23,6 @@ function createHero() {
     </div>`;
   app.appendChild(hero);
 
-  // klik => ga naar kamer.html
   document.getElementById("searchBtn").addEventListener("click", () => {
     console.log("Navigating to kamer.html");
     window.location.href = "kamer.html";
