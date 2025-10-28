@@ -1,1 +1,80 @@
-w
+body {
+  background-color: #e8ebf9;
+  font-family: Arial, sans-serif;
+}
+
+.kamer-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 50px auto;
+  max-width: 1200px;
+}
+
+.kamer-card {
+  background: white;
+  border-radius: 20px;
+  width: 340px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  padding-bottom: 20px;
+  transition: transform 0.2s ease;
+}
+
+.kamer-card:hover {
+  transform: translateY(-5px);
+}
+
+.kamer-img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.kamer-card h3 {
+  margin: 15px 0 5px;
+}
+
+.prijs {
+  color: #e67e22;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.kamer-card p {
+  margin: 5px 20px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.knoppen {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.meer {
+  background-color: #ffffff;
+}
+
+.winkelmand {
+  background-color: black;
+  color: white;
+}
+
+.uitverkocht {
+  background-color: lightgray;
+  color: #333;
+  margin-top: 15px;
+}
