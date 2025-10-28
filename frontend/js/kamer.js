@@ -9,18 +9,18 @@ app.innerHTML = `
   <div class="kamer-container">
 
     <div class="kamer-card">
-      <img src="fotos/gezellige-woonkamer-van-een-modern-appartement.jpg" alt="2 kamer" class="kamer-img">
+      <img src=fotos/foto1.png"" alt="" class="kamer-img">
       <h3>Luxe Suite met Balkon</h3>
-      <p class="prijs">€ 449,00/maand</p>
+      <p class="prijs">€ 749,00/month</p>
       <p>Locatie: Maastricht</p>
       <button class="meer">Lees meer </button>
       
     </div>
 
     <div class="kamer-card">
-      <img src="images/kamer2.jpg" alt="Comfort Kamer" class="kamer-img">
-      <h3>Comfort Kamer</h3>
-      <p class="prijs">€ 679,00/maand</p>
+      <img src="" alt="Comfort Kamer" class="kamer-img">
+      <h3>Room </h3>
+      <p class="prijs">€ 679,00/month</p>
       <p>Locatie: Aklmaar</p>
       <div class="knoppen">
         <button class="meer">Lees meer..</button>
@@ -29,12 +29,13 @@ app.innerHTML = `
     </div>
 
     <div class="kamer-card">
-      <img src="images/kamer3.jpg" alt="Budget Kamer" class="kamer-img">
+      <img src="" alt="Budget Kamer" class="kamer-img">
       <h3>Budget Kamer</h3>
-      <p class="prijs">€ 599,00/maand</p>
-      <p>Locatie: Arnhem, </p>
+      <p class="prijs">€ 599,00/month</p>
+      <p>Locatie: Arnhem</p>
+      <p>Available: 13 Dec 2025</p>
       <div class="knoppen">
-        <button class="meer">Lees meer..</button>
+        <button class="more">Read more..</button>
       </div>
     </div>
 
