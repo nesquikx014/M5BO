@@ -7,13 +7,13 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
-  margin: 50px auto;
-  max-width: 1200px;
+  gap: 3rem;
+  margin: 5rem auto;
+  max-width: 120rem;
 }
 
 .kamer-card {
-  background: rgb(245, 235, 235);
+  background: rgb(219, 210, 200);
   border-radius: 20px;
   width: 340px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -68,13 +68,3 @@ button {
   background-color: #ffffff;
 }
 
-.winkelmand {
-  background-color: black;
-  color: white;
-}
-
-.uitverkocht {
-  background-color: lightgray;
-  color: #333;
-  margin-top: 15px;
-}
