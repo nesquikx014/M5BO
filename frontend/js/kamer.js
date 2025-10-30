@@ -72,24 +72,18 @@ const kamerContainer = document.querySelector(".kamer-container");
 // Sample data for rooms (you can replace this with your actual data)
 const roomsData = [
     {
-        image: "fotos/gezellige-woonkamer-van-een-modern-appartement.jpg",
+        image: "fotos/foto1.png",
         price: "749,00",
         location: "Maastricht",
         available: "31 Oct 2025"
     },
     {
-        image: "fotos/gezellige-woonkamer-van-een-modern-appartement.jpg",
+        image: "fotos/foto15.png",
         price: "679,00",
         location: "Alkmaar",
         available: "14 Nov 2025"
     },
     {
-        image: "fotos/foto3.png",
-        price: "599,00",
-        location: "Arnhem",
-        available: "13 Dec 2025"
-    },
-    {
         image: "fotos/foto4.png",
         price: "599,00",
         location: "Arnhem",
@@ -102,55 +96,61 @@ const roomsData = [
         available: "13 Dec 2025"
     },
     {
-        image: "fotos/foto1.png",
+        image: "fotos/image.png",
+        price: "599,00",
+        location: "Arnhem",
+        available: "13 Dec 2025"
+    },
+    {
+        image: "fotos/gezellige-woonkamer-van-een-modern-appartement.jpg",
         price: "825,00",
         location: "Amsterdam",
         available: "1 Dec 2025"
     },
     {
-        image: "fotos/foto3.png",
+        image: "fotos/foto4.png",
         price: "695,00",
         location: "Rotterdam",
         available: "15 Nov 2025"
     },
     {
-        image: "fotos/foto4.png",
+        image: "fotos/foto5.png",
         price: "750,00",
         location: "Utrecht",
         available: "1 Jan 2026"
     },
     {
-        image: "fotos/foto5.png",
+        image: "fotos/image.png",
         price: "580,00",
         location: "Eindhoven",
         available: "15 Dec 2025"
     },
     {
-        image: "fotos/foto1.png",
+        image: "fotos/foto3.png",
         price: "625,00",
         location: "Groningen",
         available: "1 Dec 2025"
     },
     {
-        image: "fotos/foto3.png",
+        image: "fotos/gezellige-woonkamer-van-een-modern-appartement.jpg",
         price: "675,00",
         location: "Den Haag",
         available: "20 Nov 2025"
     },
     {
-        image: "fotos/foto4.png",
+        image: "fotos/foto5.png",
         price: "595,00",
         location: "Tilburg",
         available: "15 Jan 2026"
     },
     {
-        image: "fotos/foto5.png",
+        image: "fotos/foto4.png",
         price: "715,00",
         location: "Haarlem",
         available: "1 Dec 2025"
     },
     {
-        image: "fotos/foto1.png",
+        image: "fotos/image.png",
         price: "685,00",
         location: "Nijmegen",
         available: "15 Dec 2025"
@@ -162,91 +162,91 @@ const roomsData = [
         available: "1 Jan 2026"
     },
     {
-        image: "fotos/foto4.png",
+        image: "fotos/gezellige-woonkamer-van-een-modern-appartement.jpg",
         price: "595,00",
         location: "Breda",
         available: "15 Nov 2025"
     },
     {
-        image: "fotos/foto5.png",
+        image: "fotos/foto4.png",
         price: "775,00",
         location: "Leiden",
         available: "1 Dec 2025"
     },
     {
-        image: "fotos/foto1.png",
+        image: "fotos/foto5.png",
         price: "645,00",
         location: "Zwolle",
         available: "15 Dec 2025"
     },
     {
-        image: "fotos/foto3.png",
+        image: "fotos/image.png",
         price: "695,00",
         location: "Amersfoort",
         available: "1 Jan 2026"
     },
     {
-        image: "fotos/foto4.png",
+        image: "fotos/foto3.png",
         price: "625,00",
         location: "Almere",
         available: "15 Nov 2025"
     },
     {
-        image: "fotos/foto5.png",
+        image: "fotos/gezellige-woonkamer-van-een-modern-appartement.jpg",
         price: "735,00",
         location: "Delft",
         available: "1 Dec 2025"
     },
     {
-        image: "fotos/foto1.png",
+        image: "fotos/foto4.png",
         price: "665,00",
         location: "Apeldoorn",
         available: "15 Dec 2025"
     },
     {
-        image: "fotos/foto3.png",
+        image: "fotos/foto5.png",
         price: "705,00",
         location: "Deventer",
         available: "1 Jan 2026"
     },
     {
-        image: "fotos/foto4.png",
+        image: "fotos/image.png",
         price: "615,00",
         location: "Venlo",
         available: "15 Nov 2025"
     },
     {
-        image: "fotos/foto5.png",
+        image: "fotos/foto3.png",
         price: "785,00",
         location: "Hilversum",
         available: "1 Dec 2025"
     },
     {
-        image: "fotos/foto1.png",
+        image: "fotos/gezellige-woonkamer-van-een-modern-appartement.jpg",
         price: "655,00",
         location: "Emmen",
         available: "15 Dec 2025"
     },
     {
-        image: "fotos/foto3.png",
+        image: "fotos/foto4.png",
         price: "725,00",
         location: "Roosendaal",
         available: "1 Jan 2026"
     },
     {
-        image: "fotos/foto4.png",
+        image: "fotos/foto5.png",
         price: "605,00",
         location: "Oss",
         available: "15 Nov 2025"
     },
     {
-        image: "fotos/foto5.png",
+        image: "fotos/image.png",
         price: "795,00",
         location: "Dordrecht",
         available: "1 Dec 2025"
     },
     {
-        image: "fotos/foto1.png",
+        image: "fotos/foto3.png",
         price: "645,00",
         location: "Lelystad",
         available: "15 Dec 2025"
