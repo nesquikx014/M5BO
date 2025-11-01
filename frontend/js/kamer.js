@@ -21,7 +21,7 @@ const images = [
   "fotos/foto11.png",
   "fotos/foto12.png",
   "fotos/gezellige-woonkamer-van-een-modern-appartement.jpg"
-  , "fotos/image.png"
+  , 
 ];
 
 const cities = [
@@ -179,3 +179,4 @@ if (document.readyState === 'loading') {
 } else {
   init();
 }
+

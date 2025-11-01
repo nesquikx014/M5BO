@@ -1,6 +1,6 @@
 body {
   background-color: #ffffff;
-  font-family: Arial, sans-serif;
+  font-family:'Times New Roman', Times, serif;
 }
 
 .kamer-container {
@@ -14,9 +14,9 @@ body {
 
 .kamer-card {
   background: rgb(219, 210, 200);
-  border-radius: 20px;
-  width: 340px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 2rem;
+  width: 34rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
   text-align: center;
   padding-bottom: 20px;
   transition: transform 0.2s ease;
@@ -67,4 +67,7 @@ button {
 .meer {
   background-color: #ffffff;
 }
+
+#more {display: none;}
+
 
