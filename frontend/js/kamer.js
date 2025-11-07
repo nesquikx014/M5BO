@@ -1,6 +1,19 @@
 console.log("kamer.js geladen ✅");
 
 let app = document.getElementById("app");
+// Create filter controls
+const filterContainer = document.createElement('div');
+filterContainer.className = 'filter-controls';
+filterContainer.innerHTML = `
+    <select id="sortFilter">
+        <option value="default">Standaard</option>
+        <option value="price-low">Prijs: Laag naar Hoog</option>
+        <option value="price-high">Prijs: Hoog naar Laag</option>
+        <option value="name-az">Locatie: A-Z</option>
+        <option value="name-za">Locatie: Z-A</option>
+    </select>
+`;
+app.insertBefore(filterContainer, app.firstChild);
 // Sample data for rooms (generated using all photos in the fotos/ folder)
 const images = [
   "fotos/foto1.png",
@@ -72,7 +85,7 @@ function attachImageFallbacks() {
 
 function createRoomCard(room) {
     return `
-        <div class="kamer-card">
+        <div class="kamer-card" data-room='${JSON.stringify(room)}'>
             <img src="${room.image}" alt="Room" class="kamer-img" loading="lazy">
             <h3>Room</h3>
             <p class="Price">€ ${room.price}/month</p>
@@ -85,18 +98,32 @@ function createRoomCard(room) {
     `;
 }
 
+function addReadMoreListeners() {
+    const buttons = kamerContainer.querySelectorAll('.more');
+    buttons.forEach(button => {
+        if (!button.hasListener) {
+            button.hasListener = true;
+            button.addEventListener('click', (e) => {
+                const card = e.target.closest('.kamer-card');
+                const roomData = JSON.parse(card.dataset.room);
+                handleReadMore(roomData);
+            });
+        }
+    });
+}
+
 function loadMoreRooms() {
     if (loading) return;
     loading = true;
 
-  const start = page * itemsPerPage;
-  const end = start + itemsPerPage;
-  const roomsToLoad = roomsData.slice(start, end);
+    const start = page * itemsPerPage;
+    const end = start + itemsPerPage;
+    const roomsToLoad = roomsData.slice(start, end);
 
-  if (roomsToLoad.length === 0) {
-    shuffleArray(roomsData);
-    page = 0;
-  }
+    if (roomsToLoad.length === 0) {
+        shuffleArray(roomsData);
+        page = 0;
+    }
 
   const sliceStart = page * itemsPerPage;
   const sliceEnd = sliceStart + itemsPerPage;
@@ -105,6 +132,7 @@ function loadMoreRooms() {
     const roomsHTML = batch.map(createRoomCard).join('');
     kamerContainer.insertAdjacentHTML('beforeend', roomsHTML);
     attachImageFallbacks();
+    addReadMoreListeners();
     page++;
     if (observer) {
       const sentinel = document.getElementById('scroll-sentinel');
@@ -140,6 +168,96 @@ function createObserver() {
   observer.observe(sentinel);
 }
 
+// Handle read more button clicks
+function handleReadMore(room) {
+    // Create modal content
+    const modalContent = `
+        <div class="room-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <img src="${room.image}" alt="Room" class="modal-img">
+                <div class="modal-details">
+                    <h2>Kamer Details</h2>
+                    <p class="modal-price">€ ${room.price}/month</p>
+                    <p class="modal-location">Locatie: ${room.location}</p>
+                    <p class="modal-available">Beschikbaar vanaf: ${room.available}</p>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Create modal element
+    const modalElement = document.createElement('div');
+    modalElement.innerHTML = modalContent;
+    document.body.appendChild(modalElement.firstChild);
+
+    // Add modal styles
+    const modalStyles = document.createElement('style');
+    modalStyles.textContent = `
+        .room-modal {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 80%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .close-modal {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+        .modal-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .modal-details {
+            padding: 15px;
+        }
+        .modal-price {
+            font-size: 1.5em;
+            color: #4CAF50;
+            margin: 10px 0;
+        }
+        .modal-location, .modal-available {
+            color: #666;
+            margin: 8px 0;
+        }
+    `;
+    document.head.appendChild(modalStyles);
+
+    // Get the modal and close button
+    const modal = document.querySelector('.room-modal');
+    const closeBtn = document.querySelector('.close-modal');
+
+    // Close modal when clicking the close button or outside the modal
+    closeBtn.onclick = () => modal.remove();
+    modal.onclick = (e) => {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    };
+}
+
 function init() {
   if (!app) app = document.getElementById('app');
   if (!app) {
@@ -167,7 +285,7 @@ function init() {
     }
   }
   ensureFillViewport();
-  
+
   createObserver();
   attachImageFallbacks();
 
